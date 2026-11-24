@@ -26,7 +26,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 UDP_PORT = 2390
 HTTP_PORT = 8000
-SPEED_SCALE = 10        # the Simulink model multiplies set_speed by 10 (Gain block)
+SPEED_SCALE = 1         # set_speed is sent as real speed (the model no longer has the x10 Gain)
 MAX_TARGET = 1300       # highest target the slider allows (car tops out around here)
 STALE_PAGE_S = 2.0      # stop the car if the page is silent this long
 HISTORY_S = 20          # seconds of data kept for the chart

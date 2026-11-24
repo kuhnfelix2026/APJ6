@@ -32,19 +32,19 @@ Or for live control: `python apj6_live_control.py`, then use the page that opens
 
 ```
 delay, set_speed, set_distance, a, b, c, d, e
-3000,        110,            0, 0, 0, 0, 0, 0
+3000,        1100,            0, 0, 0, 0, 0, 0
 2000,          0,            0, 0, 0, 0, 0, 0
 ```
 
 - `delay`: how long this step lasts, in ms.
-- `set_speed`: target speed ÷ 10 (the model multiplies by 10, so 110 means 1,100).
-- Keep targets at or below about 125 (1,250); the car tops out around 1,300–1,370 at power 150.
+- `set_speed`: target speed in the car's speed units (for example 1100).
+- Keep targets at or below about 1,250; the car tops out around 1,300–1,370 at power 150.
 - End with a `0` row so the car stops.
 - No blank lines: a blank line repeats the previous step for another delay.
 
 ## Model in short
 
-- Target = `set_speed` × 10, measured speed from `APJ6_Car_get_speed`.
+- Target = `set_speed` (no scaling), measured speed from `APJ6_Car_get_speed`.
 - Discrete PI controller, sample time 0.05 s, P = 0.1, I = 0.5, output limited to 0–150 with clamping anti-windup.
 - The PID resets while the target is 0 or when the library raises `reset`.
 - `C Caller output` sends back: a = distance, b = set_speed, c = PID power, d = input a, e = battery voltage.
