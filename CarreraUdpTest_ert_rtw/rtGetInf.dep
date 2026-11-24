@@ -1,0 +1,14 @@
+rtGetInf.o: \
+ C:/Users/20231207/Downloads/CarreraUdpTest_v3.0/CarreraUdpTest_v3.0/CarreraUdpTest_ert_rtw/rtGetInf.c \
+ C:/Users/20231207/Downloads/CarreraUdpTest_v3.0/CarreraUdpTest_v3.0/CarreraUdpTest_ert_rtw/rtwtypes.h \
+ C:/PROGRA~1/MATLAB/R2025b/extern/include/tmwtypes.h \
+ C:/Users/20231207/Downloads/CarreraUdpTest_v3.0/CarreraUdpTest_v3.0/CarreraUdpTest_ert_rtw/rtGetInf.h \
+ C:/Users/20231207/Downloads/CarreraUdpTest_v3.0/CarreraUdpTest_v3.0/CarreraUdpTest_ert_rtw/rt_nonfinite.h
+
+C:/Users/20231207/Downloads/CarreraUdpTest_v3.0/CarreraUdpTest_v3.0/CarreraUdpTest_ert_rtw/rtwtypes.h:
+
+C:/PROGRA~1/MATLAB/R2025b/extern/include/tmwtypes.h:
+
+C:/Users/20231207/Downloads/CarreraUdpTest_v3.0/CarreraUdpTest_v3.0/CarreraUdpTest_ert_rtw/rtGetInf.h:
+
+C:/Users/20231207/Downloads/CarreraUdpTest_v3.0/CarreraUdpTest_v3.0/CarreraUdpTest_ert_rtw/rt_nonfinite.h:
