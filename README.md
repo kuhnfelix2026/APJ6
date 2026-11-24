@@ -1,4 +1,4 @@
-# APJ6Control: slot car cruise control with adaptive cruise control
+# CarreraUdpTest: slot car cruise control with adaptive cruise control
 
 A Simulink model runs on a Carrera slot car (Arduino Nano 33 IoT) and controls its speed with a PI controller. An adaptive cruise control (ACC) layer uses the car's distance sensor to slow down for an object ahead. A Python program on the laptop sends the target speed over Wi-Fi (UDP) through a web page with a slider, and logs everything the car sends back.
 
@@ -6,10 +6,12 @@ A Simulink model runs on a Carrera slot car (Arduino Nano 33 IoT) and controls i
 
 | Path | What it is |
 |---|---|
-| `APJ6Control.slx` | The Simulink model. |
+| `CarreraUdpTest.slx` | The Simulink model. |
+| `CarreraUdpTest.slx.r2025a` | Copy of the model saved for MATLAB R2025a. |
 | `APJ6_interface.h`, `apj6_car.a` | Precompiled car library, called from the model's C Caller blocks. |
 | `apj6_live_control.py` | Live control: web page with a speed slider, live chart and logging. |
 | `logs/` | Logged runs (`live_XX.csv`, `control_XX.csv`). |
+| `.gitignore` | Excludes Simulink build output (`CarreraUdpTest_ert_rtw/`, `slprj/`, `*.slxc`, `*.elf`, `*.bin`). These are recreated on every build. |
 
 ## Hardware and car library
 
@@ -88,7 +90,7 @@ Safety: the target is set to 0 if the web page stops checking in for 2 s, and Ct
 
 Columns: `car_id, millis, set_speed, set_distance, in_a…in_e, speed, distance, out_a…out_e`. The `out_` columns are outputs `a`–`e` from the table above.
 
-Logs recorded before the ×10 Gain was removed from the model (all logs up to and including `live_00.csv`) store `set_speed` as target ÷ 10, and their `out_a` and `out_d` columns follow the older wiring (raw distance and input `a`).
+Logs recorded while the model still had a ×10 Gain on `set_speed` (all logs up to and including `live_00.csv`) store `set_speed` as target ÷ 10, and their `out_a` column is the raw distance instead of the filtered distance.
 
 ## Measured car behaviour
 
