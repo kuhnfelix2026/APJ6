@@ -1,0 +1,21 @@
+# Simulink build output (recreated on every build)
+CarreraUdpTest_ert_rtw/
+slprj/
+*.slxc
+*.elf
+*.bin
+*.map
+*.o
+*.dep
+
+# Simulink / MATLAB autosave and backup files
+*.autosave
+*.asv
+*.slx.bak
+
+# Python
+__pycache__/
+*.pyc
+
+# Files set aside for deletion
+_to_delete/
